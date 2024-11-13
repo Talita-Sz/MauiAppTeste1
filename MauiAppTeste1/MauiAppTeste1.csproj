@@ -57,9 +57,39 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Remove="Views\EventoTeste.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiFont Remove="Resources\Fonts\Geist-VariableFont_wght.ttf" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Resources\Fonts\Geist-Black.ttf" />
+	  <None Remove="Resources\Fonts\Geist-Bold.ttf" />
+	  <None Remove="Resources\Fonts\Geist-ExtraBold.ttf" />
+	  <None Remove="Resources\Fonts\Geist-ExtraLight.ttf" />
+	  <None Remove="Resources\Fonts\Geist-Light.ttf" />
+	  <None Remove="Resources\Fonts\Geist-Medium.ttf" />
+	  <None Remove="Resources\Fonts\Geist-Regular.ttf" />
+	  <None Remove="Resources\Fonts\Geist-SemiBold.ttf" />
+	  <None Remove="Resources\Fonts\Geist-Thin.ttf" />
+	  <None Remove="Resources\Fonts\Geist-VariableFont_wght.ttf" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\EventoTeste.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\TesteEvento.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>

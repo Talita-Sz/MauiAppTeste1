@@ -13,7 +13,8 @@ namespace MauiAppTeste1
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                });
+                   fonts.AddFont("Geist-Black.ttf", "GeistBlack");
+        });
 
 #if DEBUG
     		builder.Logging.AddDebug();

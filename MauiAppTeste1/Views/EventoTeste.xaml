@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppTeste1.Views.EventoTeste"
+             Title="EventoTeste"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="AliceBlue">
+    <VerticalStackLayout VerticalOptions="CenterAndExpand"
+                         Padding="10"
+                         Spacing="10">
+        <Label Text="Bem-Vindo!"
+            FontSize="30"
+            FontFamily="GeistBlack"
+               TextColor="SteelBlue"/>
+
+        <Label Text="Insira os dados do evento"
+               FontSize="15"/>
+
+        <Frame Padding="10">
+            <VerticalStackLayout>
+                <Grid RowDefinitions="Auto, Auto, Auto"
+                      ColumnDefinitions="*, *, *">
+
+                    <Label Grid.Row="0" Grid.Column="0"
+                        Text="Nome do evento: "/>
+
+                </Grid>
+
+                <Frame Padding="10"
+                       Margin="10"/>
+
+                
+
+                    <Frame Padding="10"
+                              Margin="10">
+                    <VerticalStackLayout>
+                        <HorizontalStackLayout>
+                            <Label Text="Início: "/>
+                                <DatePicker x:Name="dtcpk_inicio"
+                                    Format="dd/MM/yyyy"/>
+                            </HorizontalStackLayout>
+
+                            <Label
+                               Text="término: "/>
+                            <HorizontalStackLayout>
+                                <DatePicker x:Name="dtcpk_termino"
+                                        Format="dd/MM/yyyy"/>
+                            </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </Frame>
+                
+
+                <Frame Padding="10"
+                  Margin="10"/>
+
+                <VerticalStackLayout>
+                    <Grid RowDefinitions="Auto, Auto, Auto"
+                          ColumnDefinitions="*, *, *">
+
+                        <Label Grid.Row="0" Grid.Column="0"
+                                Text= "Convidados:"/>
+
+                        <Label Grid.Row="0" Grid.Column="1"
+                            Text="{Binding Value}"
+                            BindingContext="{x:Reference stp_numparticipantes}"/>
+
+                        <Stepper Grid.Row="0" Grid.Column="3"
+                            x:Name="stp_numparticipantes"
+                             Minimum="0"
+                             Maximum="500"
+                             Increment="1"/>
+
+                    </Grid>
+                </VerticalStackLayout>
+
+                <Frame Padding="10"
+                        Margin="10"/>
+
+                <VerticalStackLayout>
+                    
+                        <Label Text= "Local do evento: "/>
+
+                        <Picker x:Name="pck_local"
+                                Title="Escolha seu local"/>
+
+                    
+                </VerticalStackLayout>
+
+                <Frame Padding="10"
+                        Margin="10"/>
+
+                <VerticalStackLayout>
+                    <Grid RowDefinitions="Auto, Auto, Auto"
+                    ColumnDefinitions="*, *, *">
+
+                        <Label Grid.Row="0" Grid.Column="1"
+                        Text= "Custo por participante "
+                               FontSize="18"/>
+                        
+                        <Label Grid.Row="2" Grid.Column="0"
+                        Text= "Crianças: "/>
+                        <Label Grid.Row="2" Grid.Column="0"
+                        Text= "Crianças: "/>
+
+                        <Label Grid.Row="2" Grid.Column="1"
+                         Text="{Binding Value}"
+                         BindingContext="{x:Reference stp_adultos}"
+                               TextColor="DarkRed"/>
+
+                        <Stepper Grid.Row="2" Grid.Column="2"
+                         x:Name="stp_adultos"
+                         Minimum="0"
+                         Maximum="500"
+                         Increment="1"/>
+                        </Grid>
+                </VerticalStackLayout>
+
+            </VerticalStackLayout>
+
+        </Frame>
+
+        <Button Text="Próximo"
+                BackgroundColor="SteelBlue"/>
+
+    </VerticalStackLayout>
+</ContentPage>
