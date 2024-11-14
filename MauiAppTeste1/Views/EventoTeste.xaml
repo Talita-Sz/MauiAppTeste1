@@ -18,12 +18,15 @@
 
         <Frame Padding="10">
             <VerticalStackLayout>
-                <Grid RowDefinitions="Auto, Auto, Auto"
-                      ColumnDefinitions="*, *, *">
+                <Grid RowDefinitions="Auto, Auto"
+                      ColumnDefinitions="*">
 
-                    <Label Grid.Row="0" Grid.Column="0"
-                        Text="Nome do evento: "/>
-
+                    <Label Grid.Row="0"
+                        Text="NOME DO EVENTO: " FontFamily="GeistBlack" TextColor="SteelBlue"/>
+                    <Entry x:Name="nome_evento" Grid.Row="1" 
+                        Placeholder="Enter text"
+                        Text="{Binding NomeEvento}"
+                    />
                 </Grid>
 
                 <Frame Padding="10"
@@ -34,54 +37,39 @@
                     <Frame Padding="10"
                               Margin="10">
                     <VerticalStackLayout>
-                        <HorizontalStackLayout>
+                        <Label Text="PERÍODO" HorizontalOptions="CenterAndExpand" TextColor="SteelBlue"
+                               FontFamily="GeistBlack" FontSize="18"/>
+                        
+                        <HorizontalStackLayout >
                             <Label Text="Início: "/>
                                 <DatePicker x:Name="dtcpk_inicio"
-                                    Format="dd/MM/yyyy"/>
+                                            DateSelected="dtcpk_inicio_DateSelected"    
+                                            Format="dd/MM/yyyy"/>
                             </HorizontalStackLayout>
 
-                            <Label
-                               Text="término: "/>
-                            <HorizontalStackLayout>
+                            
+                            <HorizontalStackLayout >
+                                <Label Text="término: "/>
                                 <DatePicker x:Name="dtcpk_termino"
-                                        Format="dd/MM/yyyy"/>
+                                            Format="dd/MM/yyyy"/>
                             </HorizontalStackLayout>
             </VerticalStackLayout>
         </Frame>
+              
+
                 
 
                 <Frame Padding="10"
-                  Margin="10"/>
-
-                <VerticalStackLayout>
-                    <Grid RowDefinitions="Auto, Auto, Auto"
-                          ColumnDefinitions="*, *, *">
-
-                        <Label Grid.Row="0" Grid.Column="0"
-                                Text= "Convidados:"/>
-
-                        <Label Grid.Row="0" Grid.Column="1"
-                            Text="{Binding Value}"
-                            BindingContext="{x:Reference stp_numparticipantes}"/>
-
-                        <Stepper Grid.Row="0" Grid.Column="3"
-                            x:Name="stp_numparticipantes"
-                             Minimum="0"
-                             Maximum="500"
-                             Increment="1"/>
-
-                    </Grid>
-                </VerticalStackLayout>
-
-                <Frame Padding="10"
                         Margin="10"/>
 
                 <VerticalStackLayout>
                     
-                        <Label Text= "Local do evento: "/>
+                        <Label Text= "LOCAL DO EVENTO " HorizontalOptions ="CenterAndExpand" 
+                               FontFamily="GeistBlack" TextColor="SteelBlue"/>
 
                         <Picker x:Name="pck_local"
-                                Title="Escolha seu local"/>
+                                Title="Escolha seu local:"
+                                 ItemDisplayBinding="{Binding Lugar}"/>
 
                     
                 </VerticalStackLayout>
@@ -90,29 +78,27 @@
                         Margin="10"/>
 
                 <VerticalStackLayout>
-                    <Grid RowDefinitions="Auto, Auto, Auto"
+                    <Grid RowDefinitions="Auto, Auto, Auto, Auto"
                     ColumnDefinitions="*, *, *">
 
-                        <Label Grid.Row="0" Grid.Column="1"
-                        Text= "Custo por participante "
-                               FontSize="18"/>
-                        
-                        <Label Grid.Row="2" Grid.Column="0"
-                        Text= "Crianças: "/>
-                        <Label Grid.Row="2" Grid.Column="0"
-                        Text= "Crianças: "/>
+                        <Label  Text= "PARTICIPANTES" Grid.Row="0" Grid.Column="1" FontFamily="GeistBlack"
+                                TextColor="SteelBlue"/>
 
-                        <Label Grid.Row="2" Grid.Column="1"
+                        <Label Grid.Row="3" Grid.Column="0"
+                        Text= "Participantes: "/>
+
+                        <Label Grid.Row="3" Grid.Column="1"
                          Text="{Binding Value}"
                          BindingContext="{x:Reference stp_adultos}"
                                TextColor="DarkRed"/>
 
-                        <Stepper Grid.Row="2" Grid.Column="2"
+                        <Stepper Grid.Row="3" Grid.Column="2"
                          x:Name="stp_adultos"
                          Minimum="0"
                          Maximum="500"
                          Increment="1"/>
-                        </Grid>
+
+                    </Grid>
                 </VerticalStackLayout>
 
             </VerticalStackLayout>
@@ -120,7 +106,7 @@
         </Frame>
 
         <Button Text="Próximo"
-                BackgroundColor="SteelBlue"/>
+                BackgroundColor="SteelBlue" Clicked="Button_Clicked"/>
 
     </VerticalStackLayout>
 </ContentPage>
