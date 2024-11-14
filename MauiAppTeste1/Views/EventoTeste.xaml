@@ -108,5 +108,12 @@
         <Button Text="Próximo"
                 BackgroundColor="SteelBlue" Clicked="Button_Clicked"/>
 
+       
+            <Label Text="*Nossos salões são voltados a adultos, caso queira algo para crianças, baixe nosso app EventosKids+*"
+                   HorizontalOptions="Center"
+                   FontFamily="GeistBlack"
+                   TextColor="DarkRed"/>
+        
+
     </VerticalStackLayout>
 </ContentPage>
